@@ -1,22 +1,54 @@
 var communication = require('./Communication.js');
 
 module.exports.takeOff = function(){
-	deviceId = 123;
 	console.log("calling send function with takeoff option");
-	communication.sendData(deviceId, "takeOff");
+	message = {"Type":"takeoff"};
+	communication.sendData(message);
 	//Send take off communincation
 }
 
 module.exports.land = function(){
-	deviceId = 123;
+	message = {"Type":"land"};
 	console.log("calling send function with land option");
-	communication.sendData(deviceId, "land");
+	communication.sendData(message);
 }
 
-module.exports.move = function(obj){
-	deviceId = 123;
+module.exports.left = function(){
+	var thrust = 2;
+	var tm = 2;
+	message = {"Type":"move", "Direction":"left", "Thrust":thrust, "TimeInMilliSecond":tm};
 	//Send command to device 
 	console.log("calling send function with move option");
-	communication.sendData(deviceId, "move");
+	communication.sendData(message);
 	
 }
+
+
+module.exports.right = function(){
+	var thrust = 2;
+	var tm = 2;
+	message = {"Type":"move", "Direction":"right", "Thrust":thrust, "TimeInMilliSecond":tm};
+	//Send command to device 
+	console.log("calling send function with move option");
+	communication.sendData(message);
+	
+}
+module.exports.up = function(){
+	var thrust = 2;
+	var tm = 2;
+	message = {"Type":"move", "Direction":"up", "Thrust":thrust, "TimeInMilliSecond":tm};
+	//Send command to device 
+	console.log("calling send function with move option");
+	communication.sendData(message);
+	
+}
+module.exports.down = function(){
+	var thrust = 2;
+	var tm = 2;
+	message = {"Type":"move", "Direction":"down", "Thrust":thrust, "TimeInMilliSecond":tm};
+	//Send command to device 
+	console.log("calling send function with move option");
+	communication.sendData(message);
+	
+}
+

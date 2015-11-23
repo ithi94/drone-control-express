@@ -1,5 +1,5 @@
 var settings = require('./Settings.js');
-module.exports.sendData = function(deviceId, message){
+module.exports.sendData = function(message){
 	
 	var device = require('azure-iot-device');
     var configData = settings.getConfigData();
