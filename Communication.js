@@ -1,9 +1,9 @@
-//IoT hub communication
-
+var settings = require('./Settings.js');
 module.exports.sendData = function(deviceId, message){
 	
 	var device = require('azure-iot-device');
-    var connectionString = "HostName=SwarTestiOTHub.azure-devices.net;DeviceId=myFirstDevice;SharedAccessKey=LvvJJaTYGvtbV8itlzo5jHOUu3g6WLBBkOBlUqHS4Ds=";
+    var configData = settings.getConfigData();
+	connectionString = configData.deviceConnectionString;
     var client = new device.Client(connectionString, new device.Https());
     var data = JSON.stringify({ 'deviceId': 'myFirstDevice', 'data': 'mydata' });
     var message = new device.Message(data);
